@@ -204,5 +204,18 @@ namespace twozerofoureight
             }
             return sum;
         }
+        public bool CheckGameOver()
+        {
+            bool result = false;
+            for (int i = 0; i < boardSize; i++)
+            {
+                for (int j = 0; j < boardSize; j++)
+                {
+                    if (board[i, j] == 4)
+                        result = true;
+                }
+            }
+            return result;
+        }
     }
 }

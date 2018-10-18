@@ -49,6 +49,7 @@
             this.btnRight = new System.Windows.Forms.Button();
             this.btnDown = new System.Windows.Forms.Button();
             this.lblScore = new System.Windows.Forms.Label();
+            this.lblOver = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl00
@@ -309,11 +310,22 @@
             this.lblScore.Text = "label1";
             this.lblScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lblOver
+            // 
+            this.lblOver.AutoSize = true;
+            this.lblOver.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblOver.Location = new System.Drawing.Point(12, 130);
+            this.lblOver.Name = "lblOver";
+            this.lblOver.Size = new System.Drawing.Size(128, 55);
+            this.lblOver.TabIndex = 21;
+            this.lblOver.Text = "Over";
+            // 
             // TwoZeroFourEightView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(303, 459);
+            this.Controls.Add(this.lblOver);
             this.Controls.Add(this.lblScore);
             this.Controls.Add(this.btnDown);
             this.Controls.Add(this.btnRight);
@@ -338,6 +350,7 @@
             this.Name = "TwoZeroFourEightView";
             this.Text = "Form1";
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -364,6 +377,7 @@
         private System.Windows.Forms.Button btnRight;
         private System.Windows.Forms.Button btnDown;
         private System.Windows.Forms.Label lblScore;
+        private System.Windows.Forms.Label lblOver;
     }
 }
 

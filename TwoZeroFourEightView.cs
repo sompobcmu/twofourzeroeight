@@ -29,12 +29,26 @@ namespace twozerofoureight
         {
             UpdateBoard(((TwoZeroFourEightModel)m).GetBoard());
             UpdateScore(((TwoZeroFourEightModel)m).GetScore());
+            UpdateGameOver(((TwoZeroFourEightModel)m).CheckGameOver());
         }
         private void UpdateScore(int score)
         {
             lblScore.Text = Convert.ToString(score);
         }
-
+        private void UpdateGameOver(bool Over)
+        {
+            if (Over)
+            {
+                lblOver.Text = "Game Over";
+                btnUp.Enabled = false;
+                btnLeft.Enabled = false;
+                btnDown.Enabled = false;
+                btnRight.Enabled = false;
+                KeyPreview = false;
+            }
+            else
+                lblOver.Text = "";
+        }
         private void UpdateTile(Label l, int i)
         {
             if (i != 0)
