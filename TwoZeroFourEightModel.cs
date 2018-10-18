@@ -192,5 +192,17 @@ namespace twozerofoureight
             }
             HandleChanges(changed);
         }
+        public int GetScore()
+        {
+            int sum = 0;
+            for (int i = 0; i < boardSize; i++)
+            {
+                for (int j = 0; j < boardSize; j++)
+                {
+                    sum += board[i, j];
+                }
+            }
+            return sum;
+        }
     }
 }

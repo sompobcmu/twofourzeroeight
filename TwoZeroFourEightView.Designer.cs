@@ -48,6 +48,7 @@
             this.btnUp = new System.Windows.Forms.Button();
             this.btnRight = new System.Windows.Forms.Button();
             this.btnDown = new System.Windows.Forms.Button();
+            this.lblScore = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbl00
@@ -260,7 +261,7 @@
             // 
             // btnLeft
             // 
-            this.btnLeft.Location = new System.Drawing.Point(85, 336);
+            this.btnLeft.Location = new System.Drawing.Point(62, 380);
             this.btnLeft.Name = "btnLeft";
             this.btnLeft.Size = new System.Drawing.Size(53, 45);
             this.btnLeft.TabIndex = 16;
@@ -270,7 +271,7 @@
             // 
             // btnUp
             // 
-            this.btnUp.Location = new System.Drawing.Point(140, 307);
+            this.btnUp.Location = new System.Drawing.Point(121, 351);
             this.btnUp.Name = "btnUp";
             this.btnUp.Size = new System.Drawing.Size(53, 45);
             this.btnUp.TabIndex = 17;
@@ -280,7 +281,7 @@
             // 
             // btnRight
             // 
-            this.btnRight.Location = new System.Drawing.Point(195, 336);
+            this.btnRight.Location = new System.Drawing.Point(180, 380);
             this.btnRight.Name = "btnRight";
             this.btnRight.Size = new System.Drawing.Size(53, 45);
             this.btnRight.TabIndex = 18;
@@ -290,7 +291,7 @@
             // 
             // btnDown
             // 
-            this.btnDown.Location = new System.Drawing.Point(140, 371);
+            this.btnDown.Location = new System.Drawing.Point(121, 402);
             this.btnDown.Name = "btnDown";
             this.btnDown.Size = new System.Drawing.Size(53, 45);
             this.btnDown.TabIndex = 19;
@@ -298,11 +299,22 @@
             this.btnDown.UseVisualStyleBackColor = true;
             this.btnDown.Click += new System.EventHandler(this.btnDown_Click);
             // 
+            // lblScore
+            // 
+            this.lblScore.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.lblScore.Location = new System.Drawing.Point(95, 311);
+            this.lblScore.Name = "lblScore";
+            this.lblScore.Size = new System.Drawing.Size(114, 37);
+            this.lblScore.TabIndex = 20;
+            this.lblScore.Text = "label1";
+            this.lblScore.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // TwoZeroFourEightView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(344, 428);
+            this.ClientSize = new System.Drawing.Size(303, 459);
+            this.Controls.Add(this.lblScore);
             this.Controls.Add(this.btnDown);
             this.Controls.Add(this.btnRight);
             this.Controls.Add(this.btnUp);
@@ -351,6 +363,7 @@
         private System.Windows.Forms.Button btnUp;
         private System.Windows.Forms.Button btnRight;
         private System.Windows.Forms.Button btnDown;
+        private System.Windows.Forms.Label lblScore;
     }
 }
 

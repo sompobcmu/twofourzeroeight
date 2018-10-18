@@ -28,6 +28,11 @@ namespace twozerofoureight
         public void Notify(Model m)
         {
             UpdateBoard(((TwoZeroFourEightModel)m).GetBoard());
+            UpdateScore(((TwoZeroFourEightModel)m).GetScore());
+        }
+        private void UpdateScore(int score)
+        {
+            lblScore.Text = Convert.ToString(score);
         }
 
         private void UpdateTile(Label l, int i)
