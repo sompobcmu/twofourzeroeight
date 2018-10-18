@@ -118,5 +118,68 @@ namespace twozerofoureight
             controller.ActionPerformed(TwoZeroFourEightController.DOWN);
         }
 
+        private void TwoZeroFourEightView_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (KeyPreview)
+            {
+                switch (e.KeyData)
+                {
+                    case Keys.W:
+                    case Keys.Up:
+                        controller.ActionPerformed(TwoZeroFourEightController.UP);
+                        break;
+                    case Keys.S:
+                    case Keys.Down:
+                        controller.ActionPerformed(TwoZeroFourEightController.DOWN);
+                        break;
+                    case Keys.D:
+                    case Keys.Right:
+                        controller.ActionPerformed(TwoZeroFourEightController.RIGHT);
+                        break;
+                    case Keys.A:
+                    case Keys.Left:
+                        controller.ActionPerformed(TwoZeroFourEightController.LEFT);
+                        break;
+                }
+            }
+        }
+        private void TwoZeroFourEightView_KeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            switch (e.KeyCode)
+            {
+                case Keys.Up:
+                case Keys.Down:
+                case Keys.Right:
+                case Keys.Left:
+                    {
+                        e.IsInputKey = true;
+                        break;
+                    }
+                default:
+                    {
+                        break;
+                    }
+            }
+        }
+
+        private void btnUp_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            TwoZeroFourEightView_KeyDown(sender, e);
+        }
+
+        private void btnRight_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            TwoZeroFourEightView_KeyDown(sender, e);
+        }
+
+        private void btnDown_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            TwoZeroFourEightView_KeyDown(sender, e);
+        }
+
+        private void btnLeft_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            TwoZeroFourEightView_KeyDown(sender, e);
+        }
     }
 }

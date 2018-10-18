@@ -211,7 +211,7 @@ namespace twozerofoureight
             {
                 for (int j = 0; j < boardSize; j++)
                 {
-                    if (board[i, j] == 4)
+                    if (board[i, j] == 2048)
                         result = true;
                 }
             }
