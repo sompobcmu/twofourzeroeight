@@ -206,15 +206,54 @@ namespace twozerofoureight
         }
         public bool CheckGameOver()
         {
+            
             bool result = false;
             for (int i = 0; i < boardSize; i++)
             {
                 for (int j = 0; j < boardSize; j++)
                 {
                     if (board[i, j] == 2048)
-                        result = true;
+                        result = true;                  
+                }              
+            }           
+            for(int i = 0; i < boardSize; i++)
+            {
+                for(int j = 0; j < boardSize; j++)
+                {
+                    if (board[i, j] == 0)
+                    {
+                        result = false;
+                    }
                 }
             }
+
+            for (int i = 0; i < boardSize; i++)
+            {
+                for (int j = 0; j < boardSize; j++)
+                {
+                        if(j + 1 < boardSize && board[i, j + 1] == board[i,j])
+                        {
+                            result = false;
+                            return result;
+                        }
+                        if (i + 1 < boardSize && board[i + 1, j] == board[i, j])
+                        {
+                            result = false;
+                            return result;
+                        }
+                        if (j - 1 >= 0 && board[i, j - 1] == board[i, j] )
+                        {
+                            result = false;
+                             return result;
+                        }
+                        if (i - 1 >= 0 && board[i - 1, j] == board[i, j])
+                        {
+                            result = false;
+                            return result;
+                        }
+                }
+            }
+            result = true;
             return result;
         }
     }
