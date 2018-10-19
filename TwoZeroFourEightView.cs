@@ -28,15 +28,17 @@ namespace twozerofoureight
         public void Notify(Model m)
         {
             UpdateBoard(((TwoZeroFourEightModel)m).GetBoard());
-            UpdateScore(((TwoZeroFourEightModel)m).GetScore());
-            UpdateGameOver(((TwoZeroFourEightModel)m).CheckGameOver());
+            UpdateScore(((TwoZeroFourEightModel)m).GetScore());  //call UpdateScore method.
+            UpdateGameOver(((TwoZeroFourEightModel)m).CheckGameOver()); //call UpdateGameOver method.
         }
         private void UpdateScore(int score)
         {
+            //show summay of score borad
             lblScore.Text = Convert.ToString(score);
         }
         private void UpdateGameOver(bool Over)
         {
+            /*if over is true give show Game Over and can not move anything*/
             if (Over)
             {
                 lblOver.Text = "Game Over";
@@ -46,6 +48,7 @@ namespace twozerofoureight
                 btnRight.Enabled = false;
                 KeyPreview = false;
             }
+            //if  over is flase do not anything.
             else
                 lblOver.Text = "";
         }
@@ -120,22 +123,28 @@ namespace twozerofoureight
 
         private void TwoZeroFourEightView_KeyDown(object sender, KeyEventArgs e)
         {
+            
             if (KeyPreview)
             {
+                /*use switch for use buttom to play game */
                 switch (e.KeyData)
                 {
+                    //w or arrow up to move up
                     case Keys.W:
                     case Keys.Up:
                         controller.ActionPerformed(TwoZeroFourEightController.UP);
                         break;
+                    //S or arrow down to move sown
                     case Keys.S:
                     case Keys.Down:
                         controller.ActionPerformed(TwoZeroFourEightController.DOWN);
                         break;
+                    //D or arrow Right to move Right
                     case Keys.D:
                     case Keys.Right:
                         controller.ActionPerformed(TwoZeroFourEightController.RIGHT);
                         break;
+                    //A or arrow left to move left
                     case Keys.A:
                     case Keys.Left:
                         controller.ActionPerformed(TwoZeroFourEightController.LEFT);

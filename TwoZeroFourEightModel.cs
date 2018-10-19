@@ -194,43 +194,49 @@ namespace twozerofoureight
         }
         public int GetScore()
         {
-            int sum = 0;
+            int sum = 0; //declare sum for store value.
+            /*Run loop for check board*/
             for (int i = 0; i < boardSize; i++)
             {
                 for (int j = 0; j < boardSize; j++)
                 {
-                    sum += board[i, j];
+                    sum += board[i, j]; //give sum = sum + value in bolck[i ,j]
                 }
             }
-            return sum;
+            return sum; //return sum
         }
         public bool CheckGameOver()
         {
             
-            bool result = false;
+            bool result = false; //declare result is false
+            //run check all bolck
             for (int i = 0; i < boardSize; i++)
             {
                 for (int j = 0; j < boardSize; j++)
                 {
-                    if (board[i, j] == 2048)
+                    /*if sum score board is 2048 give result is true*/
+                    if (board[i, j] == 2048) 
                         result = true;                  
                 }              
             }           
+            //run check all bolck
             for(int i = 0; i < boardSize; i++)
             {
                 for(int j = 0; j < boardSize; j++)
                 {
+                    /*if bolck i,j is 0 give result is false*/
                     if (board[i, j] == 0)
                     {
                         result = false;
                     }
                 }
             }
-
+            /*run check all bolck for check if the borad is full and can not move give.*/
             for (int i = 0; i < boardSize; i++)
             {
                 for (int j = 0; j < boardSize; j++)
                 {
+                    /*if for check around bolck it can move give  result = false and return it*/
                         if(j + 1 < boardSize && board[i, j + 1] == board[i,j])
                         {
                             result = false;
@@ -253,6 +259,7 @@ namespace twozerofoureight
                         }
                 }
             }
+            /*if it not in case give  result = true and return it*/
             result = true;
             return result;
         }
