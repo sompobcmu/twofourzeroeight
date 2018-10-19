@@ -154,6 +154,7 @@ namespace twozerofoureight
         }
         private void TwoZeroFourEightView_KeyDown(object sender, PreviewKeyDownEventArgs e)
         {
+            /*if use arrow key give e.IsInputKey = true*/
             switch (e.KeyCode)
             {
                 case Keys.Up:
@@ -171,6 +172,7 @@ namespace twozerofoureight
             }
         }
 
+        /*method for use arrow key*/
         private void btnUp_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
             TwoZeroFourEightView_KeyDown(sender, e);
